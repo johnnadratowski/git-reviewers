@@ -19,6 +19,7 @@ a branch.
 You can easily install the utility by running the following command:
 
 ```bash
+curl -o- https://raw.githubusercontent.com/johnnadratowski/git-reviewers/master/install.sh | INSTALL_DIR=(###ENTER A VALUE ON $PATH OR DEFAULTS TO /usr/local/bin###) bash
 ```
 
 Alternatively, you can clone the repo and run `install.sh` manually.
