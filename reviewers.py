@@ -4,6 +4,7 @@ from os.path import abspath
 import pydoc
 import re
 import subprocess
+import sys
 
 import python_lib.shell as shl
 
@@ -170,7 +171,7 @@ def print_suggested_reviewers(diff_infos):
 
     if not total_reviewers:
         shl.print_color(shl.BOLD, "\nNo potential reviewers found. This may be because the only person to work on this was you.\n")
-        return
+        sys.exit(2)
 
     shl.print_section(shl.BOLD, "Suggested Reviewers:")
 
@@ -240,7 +241,7 @@ def get_reviewers(contributor, branch, files):
     if not diff_infos:
         # TODO: How to suggest reviewers for only added files
         shl.print_color(shl.BOLD, "\nNo relevant file diffs found. That might be because you've only added files.\n")
-        return
+        sys.exit(1)
 
     if contributor:
         print_contributer_lines(contributor, diff_infos)
