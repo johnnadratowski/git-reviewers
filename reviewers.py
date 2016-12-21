@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from decimal import Decimal
+from os.path import abspath
 import pydoc
 import re
 import subprocess
@@ -222,7 +223,7 @@ def get_reviewers(contributor, branch, files):
         diff_info = get_file_reviewers(diff, branch)
         if not diff_info.get("type"):
             continue
-        if files and diff_info['file'] not in files:
+        if files and abspath(diff_info['file']) not in files:
             continue
         diff_infos.append(diff_info)
         if diff_info["type"] == "A":

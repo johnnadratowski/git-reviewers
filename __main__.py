@@ -1,4 +1,5 @@
 import argparse
+from os.path import abspath
 
 from reviewers import get_git_branches, get_reviewers
 
@@ -22,5 +23,7 @@ elif 'develop' in get_git_branches():
 else:
     branch = 'master'
 
+if args.files:
+    args.files = [abspath(path) for path in args.files]
 
 get_reviewers(args.contributor, branch, args.files)
