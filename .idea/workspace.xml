@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16e3337e-ba2d-475f-a6be-029fa37e969d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__main__.py" afterPath="$PROJECT_DIR$/__main__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install.sh" afterPath="$PROJECT_DIR$/install.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reviewers.py" afterPath="$PROJECT_DIR$/reviewers.py" />
     </list>
     <ignored path="git-reviewers.iws" />
@@ -29,8 +26,8 @@
       <file leaf-file-name="reviewers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reviewers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="170" column="33" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
+            <state relative-caret-position="731">
+              <caret line="236" column="3" selection-start-line="236" selection-start-column="3" selection-end-line="236" selection-end-column="3" />
               <folding>
                 <element signature="e#23#50#0" expanded="true" />
               </folding>
@@ -471,8 +468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reviewers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="170" column="33" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
+        <state relative-caret-position="731">
+          <caret line="236" column="3" selection-start-line="236" selection-start-column="3" selection-end-line="236" selection-end-column="3" />
           <folding>
             <element signature="e#23#50#0" expanded="true" />
           </folding>

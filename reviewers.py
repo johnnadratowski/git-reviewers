@@ -222,6 +222,8 @@ def get_reviewers(contributor, branch, files):
         diff_info = get_file_reviewers(diff, branch)
         if not diff_info.get("type"):
             continue
+        if files and diff_info['file'] not in files:
+            continue
         diff_infos.append(diff_info)
         if diff_info["type"] == "A":
             shl.print_color(shl.GREEN, diff)
@@ -232,8 +234,7 @@ def get_reviewers(contributor, branch, files):
         else:
             shl.print_color(shl.LTBLUE, diff)
 
-    if files:
-        diff_infos = [d for d in diff_infos if d['file'] in files]
+    shl.stderr("")
 
     if contributor:
         print_contributer_lines(contributor, diff_infos)
