@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-import argparse
 from decimal import Decimal
 import pydoc
 import re
@@ -82,8 +81,11 @@ def get_code_chunks(diff_info, branch):
             continue
 
         line_chunk = line.split("@@")[1].split(" ")[1][1:]
-        chunk = {}
-        chunk["start_line"], chunk["num_lines"] = line_chunk.split(",")
+        splits = line_chunk.split(",")
+        if len(splits) != 2:
+            continue
+
+        chunk = dict(start_line=splits[0], num_lines=splits[1])
 
         diff_info["chunks"].append(chunk)
 
@@ -165,6 +167,10 @@ def get_total_reviewers(diff_infos):
 def print_suggested_reviewers(diff_infos):
     total_reviewers = get_total_reviewers(diff_infos)
 
+    if not total_reviewers:
+        shl.print_color(shl.BOLD, "\nNo potential reviewers found. This may be because the only person to work on this was you.\n")
+        return
+
     shl.print_section(shl.BOLD, "Suggested Reviewers:")
 
     # shl.print_table(["User", "Contributed", "Number of Lines"], total_reviewers)
@@ -208,7 +214,7 @@ def print_contributer_lines(contributer, diff_infos):
     pydoc.pager("\n".join(output))
 
 
-def get_reviewers(contributer, branch):
+def get_reviewers(contributor, branch, files):
     raw = get_diff_raw(branch)
     shl.print_section(shl.BOLD, "Diff Raw Output:")
     diff_infos = []
@@ -226,7 +232,10 @@ def get_reviewers(contributer, branch):
         else:
             shl.print_color(shl.LTBLUE, diff)
 
-    if contributer:
-        print_contributer_lines(contributer, diff_infos)
+    if files:
+        diff_infos = [d for d in diff_infos if d['file'] in files]
+
+    if contributor:
+        print_contributer_lines(contributor, diff_infos)
     else:
         print_suggested_reviewers(diff_infos)
