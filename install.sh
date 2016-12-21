@@ -1,7 +1,7 @@
 #! /bin/bash
 
 folder="$(date +%s)-git-reviewers"
-output_path=${1:-/usr/local/bin}
+output_path=${INSTALL_DIR:-/usr/local/bin}
 
 touch $output_path/$folder && rm $output_path/$folder || {
 	echo "You do not have write access to the output path: $output_path" 1>&2
