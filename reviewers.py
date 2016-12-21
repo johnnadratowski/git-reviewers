@@ -237,6 +237,11 @@ def get_reviewers(contributor, branch, files):
 
     shl.stderr("")
 
+    if not diff_infos:
+        # TODO: How to suggest reviewers for only added files
+        shl.print_color(shl.BOLD, "\nNo relevant file diffs found. That might be because you've only added files.\n")
+        return
+
     if contributor:
         print_contributer_lines(contributor, diff_infos)
     else:

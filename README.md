@@ -36,4 +36,9 @@ git reviewers
 # If you only want to see suggested reviewers for certain files:
 git reviewers app/test/testfoo.py app/test/testbar.py
 
+# Specifying a contributer will drop into a ‘diff’ mode, showing you the lines of
+# code the contributer has touched in/near your changes
+git reviewers -c “Sally” app/test/testfoo.py app/test/testbar.py
+```
+
 

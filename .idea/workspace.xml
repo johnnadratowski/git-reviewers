@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16e3337e-ba2d-475f-a6be-029fa37e969d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__main__.py" afterPath="$PROJECT_DIR$/__main__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reviewers.py" afterPath="$PROJECT_DIR$/reviewers.py" />
     </list>
     <ignored path="git-reviewers.iws" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="reviewers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reviewers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="225" column="46" selection-start-line="225" selection-start-column="46" selection-end-line="225" selection-end-column="46" />
+            <state relative-caret-position="459">
+              <caret line="242" column="13" selection-start-line="242" selection-start-column="13" selection-end-line="242" selection-end-column="13" />
               <folding>
                 <element signature="e#23#50#0" expanded="true" />
               </folding>
@@ -469,8 +469,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reviewers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="225" column="46" selection-start-line="225" selection-start-column="46" selection-end-line="225" selection-end-column="46" />
+        <state relative-caret-position="459">
+          <caret line="242" column="13" selection-start-line="242" selection-start-column="13" selection-end-line="242" selection-end-column="13" />
           <folding>
             <element signature="e#23#50#0" expanded="true" />
           </folding>
