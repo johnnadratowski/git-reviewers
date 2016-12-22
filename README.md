@@ -60,4 +60,6 @@ are familiar with the code.
 
 There are definitely opportunities to improve. Right now it simply counts up the lines, determines the contribution % of each contributer, sorts them, and outputs the information.  However it could be much smarter, and look at what the line of code is doing, or have some weighted value for each type of line depending on what happened in the file.
 
+Also, if you only added files, it has nothing to compare.  In that case it probably makes sense to look at the other files in the module or something else, like the modules that import the new file.
+
 During the install, to make the git subcommand, I clone the repo and create a zip file containing the `__main__.py` and associated code.  This gets installed somewhere on $PATH that git can understand as a subcommand by naming it `git-reviewers`.  A good tutorial on the python zip file executables was written by [Don McCaughey here](http://blog.ablepear.com/2012/10/bundling-python-files-into-stand-alone.html).
