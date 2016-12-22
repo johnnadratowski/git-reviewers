@@ -33,7 +33,7 @@ You can update it by re-running this command as well.
 ## Usage
 
 ```
-# This will tell you the potential reviewers of the branch, orderd by most prolific against master
+# This will tell you the potential reviewers of the branch, ordered by most prolific, against master
 git reviewers -b master
 
 # If you omit -b, it will default first to a `develop` (a la git flow) branch, 
