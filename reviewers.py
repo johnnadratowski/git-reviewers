@@ -147,7 +147,7 @@ def get_total_reviewers(diff_infos):
     try:
         current_user = get_git_user()
     except subprocess.CalledProcessError:
-        shl.error("\nYou don't have git config `user.name` set, you may see yourself in the output.\n")
+        shl.warning("\nYou don't have git config `user.name` set, you may see yourself in the output.\n")
         current_user = None
 
     for diff_info in diff_infos:
