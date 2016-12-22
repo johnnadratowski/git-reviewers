@@ -4,7 +4,9 @@
 
 **Tested with git version 2.11.0**
 
-The premise of this tool is simple: Tell you who should review your PR.
+Wouldn't it be nice if git could give you this output when you have a large PR working with a big team?
+
+![Suggested Reviewers](./doc/img/suggested-reviewers.png)
 
 When working on a large team or in a large company, sometimes its difficult to
 tell who you should add as a reviewer to a pull request... especially when
@@ -27,6 +29,7 @@ curl -o- https://raw.githubusercontent.com/johnnadratowski/git-reviewers/master/
 
 Alternatively, you can clone the repo and run `install.sh` manually.
 
+You can update it by re-running this command as well.
 ## Usage
 
 ```
@@ -39,6 +42,10 @@ git reviewers
 
 # If you only want to see suggested reviewers for certain files:
 git reviewers app/test/testfoo.py app/test/testbar.py
+
+# If you want to use this to pipe to another command, 
+# you can dump out the raw in-memory data structures as JSON
+git reviewers --output=raw
 
 # Specifying a contributer will drop into a ‘diff’ mode, showing you the lines of
 # code the contributer has touched in/near your changes
