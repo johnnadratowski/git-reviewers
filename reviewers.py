@@ -144,10 +144,15 @@ def get_file_reviewers(line, branch):
 
 def get_total_reviewers(diff_infos):
     total_reviewers = {}
-    current_user = get_git_user()
+    try:
+        current_user = get_git_user()
+    except subprocess.CalledProcessError:
+        shl.error("\nYou don't have git config `user.name` set, you may see yourself in the output.\n")
+        current_user = None
+
     for diff_info in diff_infos:
         for reviewer in diff_info["reviewers"]:
-            if current_user.strip() == reviewer:
+            if current_user and current_user.strip() == reviewer:
                 continue # Don't include the current user
 
             if reviewer not in total_reviewers:
