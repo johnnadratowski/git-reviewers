@@ -53,4 +53,11 @@ git reviewers --output=raw
 git reviewers -c “Sally” app/test/testfoo.py app/test/testbar.py
 ```
 
+## How does it work?
 
+The implementation is really simple, actually.  First, it gets all of the files changed using `git diff --stat`.  Then it will get all of the lines around your changes using `git diff` for each file.  It then splits up the chunks of those ranges to feed to `git blame -L {line numbers}` to get the people who
+are familiar with the code.
+
+There are definitely opportunities to improve. Right now it simply counts up the lines, determines the contribution % of each contributer, sorts them, and outputs the information.  However it could be much smarter, and look at what the line of code is doing, or have some weighted value for each type of line depending on what happened in the file.
+
+During the install, to make the git subcommand, I clone the repo and create a zip file containing the `__main__.py` and associated code.  This gets installed somewhere on $PATH that git can understand as a subcommand by naming it `git-reviewers`.  A good tutorial on the python zip file executables was written by [Don McCaughey here](http://blog.ablepear.com/2012/10/bundling-python-files-into-stand-alone.html).
