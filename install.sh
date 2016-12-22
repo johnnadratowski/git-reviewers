@@ -40,3 +40,4 @@ chmod +x $output_path/git-reviewers || {
 	exit 6
 }
 
+rm -rf $folder.zip $folder

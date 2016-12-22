@@ -1,6 +1,8 @@
 # git-reviewers
 
-**Tested on 2.7.12 and 3.5.2 but probably will work with >=2.5**
+**Tested with python 2.7.12 and 3.5.2 but probably will work with >=2.5**
+
+**Tested with git version 2.11.0**
 
 The premise of this tool is simple: Tell you who should review your PR.
 
@@ -19,8 +21,9 @@ a branch.
 You can easily install the utility by running the following command:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/johnnadratowski/git-reviewers/master/install.sh | INSTALL_DIR=(###ENTER A VALUE ON $PATH OR DEFAULTS TO /usr/local/bin###) bash
+curl -o- https://raw.githubusercontent.com/johnnadratowski/git-reviewers/master/install.sh | INSTALL_DIR=/usr/local/bin bash
 ```
+**INSTALL_DIR must be on your $PATH. If not specified, defaults to `/usr/local/bin`.**
 
 Alternatively, you can clone the repo and run `install.sh` manually.
 
