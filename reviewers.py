@@ -216,7 +216,7 @@ def print_contributer_lines(contributer, diff_infos):
     pydoc.pager("\n".join(output))
 
 
-def get_reviewers(contributor, branch, files):
+def get_reviewers(contributor, branch, files, output):
     raw = get_diff_raw(branch)
     shl.print_section(shl.BOLD, "Diff Raw Output:")
     diff_infos = []
@@ -243,7 +243,16 @@ def get_reviewers(contributor, branch, files):
         shl.print_color(shl.BOLD, "\nNo relevant file diffs found. That might be because you've only added files.\n")
         sys.exit(1)
 
-    if contributor:
-        print_contributer_lines(contributor, diff_infos)
+    if output == "raw":
+        shl.stdout(diff_infos)
+
+    elif output == "default":
+        if contributor:
+            print_contributer_lines(contributor, diff_infos)
+        else:
+            print_suggested_reviewers(diff_infos)
     else:
-        print_suggested_reviewers(diff_infos)
+        shl.error("Unrecognized output type: {output}", output=output)
+        sys.exit(3)
+
+    sys.exit(0)
