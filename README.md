@@ -22,14 +22,8 @@ a branch.
 
 You can easily install the utility by running the following command:
 
-```bash
-curl -o- https://raw.githubusercontent.com/johnnadratowski/git-reviewers/master/install.sh | INSTALL_DIR=/usr/local/bin bash
-```
-**INSTALL_DIR must be on your $PATH. If not specified, defaults to `/usr/local/bin`.**
+    pip install git+https://github.com/johnnadratowski/git-reviewers.git
 
-Alternatively, you can clone the repo and run `install.sh` manually.
-
-You can update it by re-running this command as well.
 ## Usage
 
 ```
@@ -62,4 +56,4 @@ There are definitely opportunities to improve. Right now it simply counts up the
 
 Also, if you only added files, it has nothing to compare.  In that case it probably makes sense to look at the other files in the module or something else, like the modules that import the new file.
 
-During the install, to make the git subcommand, I clone the repo and create a zip file containing the `__main__.py` and associated code.  This gets installed somewhere on $PATH that git can understand as a subcommand by naming it `git-reviewers`.  A good tutorial on the python zip file executables was written by [Don McCaughey here](http://blog.ablepear.com/2012/10/bundling-python-files-into-stand-alone.html).
+`git-reviewers` gets installed somewhere on `$PATH` so that git can understand `reviewers` as a subcommand.
